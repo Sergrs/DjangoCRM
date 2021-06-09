@@ -29,7 +29,7 @@ class Agent(models.Model):
     def __str__(self):
         return self.user.username
 
-def post_user_created_signal(sender, instance,created, **kwargs):
+def post_user_created_signal(sender, instance, created, **kwargs):
     print(instance, created)
     if created:
         UserProfile.objects.create(user=instance)
